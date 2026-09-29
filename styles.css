@@ -1,6 +1,6 @@
 /* ============================================================
    Unbound Works — sleek modern revamp
-   Calm precision: cool white, ink, one teal accent. CSS-only motion.
+   Calm precision: cool white, ink, one blue accent. CSS-only motion.
    ============================================================ */
 
 :root{
@@ -15,10 +15,10 @@
   --muted:#5B7076;
 
   /* signal */
-  --accent:#0F766E;        /* medium dark teal */
+  --accent:#0C5078;        /* medium dark blue */
   --accent-ink:#FFFFFF;    /* text on accent fills */
-  --accent-2:#0F766E;      /* labels */
-  --accent-d:#0B5F58;      /* hover */
+  --accent-2:#0C5078;      /* labels */
+  --accent-d:#093E5D;      /* hover */
   --shadow:0 24px 48px -28px rgba(12,34,41,.28);
 
   /* lines + radii */
@@ -58,7 +58,7 @@ img,svg{display:block}
 body::before{
   content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
   background:
-    radial-gradient(620px 620px at 80% 28%,rgba(15,118,110,.10),transparent 64%);
+    radial-gradient(620px 620px at 80% 28%,rgba(12,80,120,.10),transparent 64%);
 }
 
 /* focus visibility */
@@ -178,7 +178,7 @@ h1{font-size:clamp(3.2rem,8.4vw,6.4rem);line-height:.98;letter-spacing:-.03em}
 }
 .cell::before{ /* hover sheen */
   content:"";position:absolute;inset:0;pointer-events:none;opacity:0;
-  background:linear-gradient(130deg,transparent 40%,rgba(15,118,110,.05) 55%,transparent 70%);
+  background:linear-gradient(130deg,transparent 40%,rgba(12,80,120,.05) 55%,transparent 70%);
   transition:opacity .4s var(--ease);
 }
 .cell:hover{transform:translateY(-5px);border-color:var(--hairline-2);box-shadow:var(--shadow)}
@@ -186,7 +186,7 @@ h1{font-size:clamp(3.2rem,8.4vw,6.4rem);line-height:.98;letter-spacing:-.03em}
 .cell h3{font-size:clamp(1.5rem,2.3vw,1.9rem);line-height:1.1;margin-bottom:12px}
 .cell p{color:var(--ink-soft);font-size:1rem;max-width:46ch}
 .c-soft{grid-column:span 3;background:
-  linear-gradient(155deg,rgba(15,118,110,.12),var(--surface) 70%)}
+  linear-gradient(155deg,rgba(12,80,120,.12),var(--surface) 70%)}
 .c-ai{grid-column:span 3}
 .c-ops{grid-column:span 6;background:
   linear-gradient(120deg,var(--surface-2),var(--surface) 60%)}
@@ -209,10 +209,10 @@ h1{font-size:clamp(3.2rem,8.4vw,6.4rem);line-height:.98;letter-spacing:-.03em}
 .cap-media{
   border-radius:var(--r-card);min-height:280px;position:relative;overflow:hidden;
   border:1px solid var(--hairline);
-  background:linear-gradient(150deg,rgba(15,118,110,.14),var(--surface) 72%);
+  background:linear-gradient(150deg,rgba(12,80,120,.14),var(--surface) 72%);
 }
 .cap.flip .cap-media{background:linear-gradient(150deg,var(--surface-2),var(--surface) 70%)}
-.cap-media.alt{background:linear-gradient(150deg,rgba(15,118,110,.07),var(--surface-2) 70%)}
+.cap-media.alt{background:linear-gradient(150deg,rgba(12,80,120,.07),var(--surface-2) 70%)}
 .cap-media .wm{position:absolute;right:-30px;bottom:-50px;width:250px;opacity:.14}
 .cap-media .wm path{fill:none;stroke:var(--ink);stroke-width:22;stroke-linecap:round;stroke-linejoin:round}
 .worklist{list-style:none;margin-top:26px;display:flex;flex-wrap:wrap;gap:10px}
@@ -293,7 +293,7 @@ h1{font-size:clamp(3.2rem,8.4vw,6.4rem);line-height:.98;letter-spacing:-.03em}
 .contact-card h2{font-size:clamp(2.2rem,4.8vw,3.6rem);line-height:1.04}
 .contact-card p{color:rgba(255,255,255,.85);font-size:1.15rem;margin:20px auto 32px;max-width:46ch;font-family:var(--sans)}
 .contact-card .btn-primary{background:#fff;color:var(--accent);font-size:1.02rem;padding:15px 34px}
-.contact-card .btn-primary:hover{background:#E6F4F2}
+.contact-card .btn-primary:hover{background:#E4EEF6}
 .contact-card .mail{display:block;margin-top:24px;font-family:var(--mono);font-size:14px;letter-spacing:.04em;color:rgba(255,255,255,.8)}
 .contact-card .wm{display:none}
 
