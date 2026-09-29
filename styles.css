@@ -1,29 +1,29 @@
 /* ============================================================
    Unbound Works — sleek modern revamp
-   Calm precision: cool white, ink, one blue accent. CSS-only motion.
+   Calm precision: cool white (blue-gray), ink, one blue accent. CSS-only motion.
    ============================================================ */
 
 :root{
   /* surfaces */
-  --canvas:#F6FAFA;        /* cool white */
+  --canvas:#F5F8FB;        /* cool white (blue-gray) */
   --surface:#FFFFFF;
-  --surface-2:#EAF2F2;
+  --surface-2:#EAF0F6;
 
   /* ink */
-  --ink:#0C2229;
-  --ink-soft:#43595F;
-  --muted:#5B7076;
+  --ink:#0C1F33;
+  --ink-soft:#445468;
+  --muted:#5A6B80;
 
   /* signal */
   --accent:#0C5078;        /* medium dark blue */
   --accent-ink:#FFFFFF;    /* text on accent fills */
   --accent-2:#0C5078;      /* labels */
   --accent-d:#093E5D;      /* hover */
-  --shadow:0 24px 48px -28px rgba(12,34,41,.28);
+  --shadow:0 24px 48px -28px rgba(12,31,51,.28);
 
   /* lines + radii */
-  --hairline:rgba(12,34,41,.10);
-  --hairline-2:rgba(12,34,41,.20);
+  --hairline:rgba(12,31,51,.10);
+  --hairline-2:rgba(12,31,51,.20);
   --r-card:18px;
   --r-pill:999px;
   --maxw:1240px;
@@ -99,7 +99,7 @@ header .wrap{padding:0 18px}
 nav{
   display:flex;align-items:center;justify-content:space-between;
   height:62px;padding:0 12px 0 18px;
-  background:rgba(246,250,250,.82);
+  background:rgba(245,248,251,.82);
   backdrop-filter:blur(14px) saturate(140%);
   -webkit-backdrop-filter:blur(14px) saturate(140%);
   border:1px solid var(--hairline);
