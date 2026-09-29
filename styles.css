@@ -118,13 +118,13 @@ nav{
 .nav-links a.active::after{right:0}
 .nav-cta{padding:9px 18px}
 @media(max-width:760px){
-  .nav-links{gap:14px}
-  .nav-links a:not(.nav-cta){display:none}
-  .nav-cta{padding:9px 15px;font-size:13.5px}
+  .nav-links{gap:16px}
+  .nav-links a{font-size:14px;white-space:nowrap}
+  .nav-cta{display:none} /* contact CTA lives in the hero and page footer on mobile */
 }
-@media(max-width:420px){
-  .brand span{font-size:15px}
-  nav{padding:0 8px 0 14px}
+@media(max-width:480px){
+  .brand span{display:none} /* logo mark only; link keeps its aria-label */
+  nav{padding:0 18px 0 14px}
 }
 
 /* ---------- SHARED MARK ---------- */
@@ -143,7 +143,7 @@ section{position:relative;z-index:1}
 .hero{
   position:relative;min-height:calc(100dvh - 90px);
   display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:48px;
-  padding:clamp(36px,7vw,72px) 0 56px;
+  padding:clamp(36px,7vw,72px) 28px 56px; /* keep .wrap side gutters */
 }
 .hero-bg{position:absolute;inset:-40px 0 0 0;z-index:0;pointer-events:none;overflow:hidden}
 .hero-bg::after{ /* faint dot grid */
@@ -164,7 +164,7 @@ h1{font-size:clamp(3.2rem,8.4vw,6.4rem);line-height:.98;letter-spacing:-.02em}
 .hero-art{position:relative;z-index:1;display:flex;justify-content:center;align-items:center}
 .hero-art svg{width:min(440px,82%);height:auto;overflow:visible}
 @media(max-width:860px){
-  .hero{grid-template-columns:1fr;min-height:auto;padding:24px 0 44px;gap:24px}
+  .hero{grid-template-columns:1fr;min-height:auto;padding:24px 28px 44px;gap:24px}
   .hero-art{order:-1}
   .hero-art svg{width:180px}
 }
@@ -324,6 +324,8 @@ footer{border-top:1px solid var(--hairline);padding:48px 0}
 .foot{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .foot .brand{font-size:16px}
 .foot .meta{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.foot-links{display:flex;gap:22px;font-size:14px;color:var(--ink-soft)}
+.foot-links a:hover{color:var(--accent)}
 
 /* ============================================================
    CSS-ONLY MOTION
