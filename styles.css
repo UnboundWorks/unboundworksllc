@@ -310,7 +310,8 @@ footer{position:relative;padding:48px 0}
 .hero p.lead{margin-top:28px;margin-bottom:36px}
 .hero-actions,.worklist{justify-content:center}
 .foot{flex-direction:column;justify-content:center;gap:18px}
-.cap{grid-template-columns:1fr;max-width:760px;margin:0 auto}
+.cap{grid-template-columns:1fr}
+.cap-body{max-width:760px;margin:0 auto}
 .cap-media{display:none} /* empty decorative panels; single centered column instead */
 
 /* ---------- SECTION RULES (content width, not full bleed) ---------- */
