@@ -178,6 +178,7 @@ h1{font-size:clamp(3.2rem,8.4vw,6.4rem);line-height:.98;letter-spacing:-.03em}
 .page-head{padding:clamp(72px,10vw,120px) 0 clamp(40px,5vw,56px)}
 .page-head h1{font-size:clamp(2.8rem,6.4vw,5rem);line-height:1.0}
 .page-head p{color:var(--ink-soft);font-size:1.2rem;max-width:52ch;margin-top:24px;font-family:var(--sans)}
+.page-head .hero-actions{margin-top:32px}
 
 /* ---------- BENTO (home): three glass cards in a row ---------- */
 .bento{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
