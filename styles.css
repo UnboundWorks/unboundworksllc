@@ -15,10 +15,10 @@
   --muted:#5A6B80;
 
   /* signal */
-  --accent:#0A7A9A;        /* medium dark blue */
+  --accent:#096E8B;        /* medium dark blue */
   --accent-ink:#FFFFFF;    /* text on accent fills */
-  --accent-2:#0A7A9A;      /* labels */
-  --accent-d:#085F78;      /* hover */
+  --accent-2:#096E8B;      /* labels */
+  --accent-d:#07566C;      /* hover */
   --shadow:0 24px 48px -28px rgba(30,45,64,.28);
 
   /* lines + radii */
@@ -178,7 +178,7 @@ h1{font-size:clamp(3.2rem,8.4vw,6.4rem);line-height:.98;letter-spacing:-.03em}
 }
 .cell::before{ /* hover sheen */
   content:"";position:absolute;inset:0;pointer-events:none;opacity:0;
-  background:linear-gradient(130deg,transparent 40%,rgba(10,122,154,.05) 55%,transparent 70%);
+  background:linear-gradient(130deg,transparent 40%,rgba(9,110,139,.05) 55%,transparent 70%);
   transition:opacity .4s var(--ease);
 }
 .cell:hover{transform:translateY(-5px);border-color:var(--hairline-2);box-shadow:var(--shadow)}
@@ -186,7 +186,7 @@ h1{font-size:clamp(3.2rem,8.4vw,6.4rem);line-height:.98;letter-spacing:-.03em}
 .cell h3{font-size:clamp(1.5rem,2.3vw,1.9rem);line-height:1.1;margin-bottom:12px}
 .cell p{color:var(--ink-soft);font-size:1rem;max-width:46ch}
 .c-soft{grid-column:span 3;background:
-  linear-gradient(155deg,rgba(10,122,154,.12),var(--surface) 70%)}
+  linear-gradient(155deg,rgba(9,110,139,.12),var(--surface) 70%)}
 .c-ai{grid-column:span 3}
 .c-ops{grid-column:span 6;background:
   linear-gradient(120deg,var(--surface-2),var(--surface) 60%)}
@@ -209,10 +209,10 @@ h1{font-size:clamp(3.2rem,8.4vw,6.4rem);line-height:.98;letter-spacing:-.03em}
 .cap-media{
   border-radius:var(--r-card);min-height:280px;position:relative;overflow:hidden;
   border:1px solid var(--hairline);
-  background:linear-gradient(150deg,rgba(10,122,154,.14),var(--surface) 72%);
+  background:linear-gradient(150deg,rgba(9,110,139,.14),var(--surface) 72%);
 }
 .cap.flip .cap-media{background:linear-gradient(150deg,var(--surface-2),var(--surface) 70%)}
-.cap-media.alt{background:linear-gradient(150deg,rgba(10,122,154,.07),var(--surface-2) 70%)}
+.cap-media.alt{background:linear-gradient(150deg,rgba(9,110,139,.07),var(--surface-2) 70%)}
 .cap-media .wm{position:absolute;right:-30px;bottom:-50px;width:250px;opacity:.14}
 .cap-media .wm path{fill:none;stroke:var(--ink);stroke-width:22;stroke-linecap:round;stroke-linejoin:round}
 .worklist{list-style:none;margin-top:26px;display:flex;flex-wrap:wrap;gap:10px}
