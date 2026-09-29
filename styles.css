@@ -1,29 +1,39 @@
 /* ============================================================
    Unbound Works — sleek modern revamp
-   Calm precision: cool white (blue-gray), ink, one blue accent. CSS-only motion.
+   Ocean and gold: cool white, navy ink, azure accent, gold details. CSS-only motion.
    ============================================================ */
 
 :root{
   /* surfaces */
-  --canvas:#F4F8FA;        /* cool white (blue-gray) */
+  --canvas:#F7FBFC;        /* cool white */
   --surface:#FFFFFF;
-  --surface-2:#E7EEF3;
+  --surface-2:#E6F3F7;
+  --parchment:#F2E8D2;
 
   /* ink */
-  --ink:#1F3442;
-  --ink-soft:#495F6E;
-  --muted:#556977;
+  --ink:#0A3552;           /* abyss navy */
+  --ink-soft:#3F5F75;
+  --muted:#56738A;
+
+  /* palette */
+  --teal:#1F93B0;          /* ocean teal */
+  --azure:#12608F;         /* deep azure */
+  --navy:#0A3552;          /* abyss navy */
+  --gold:#E6C27A;          /* bright gold */
+  --antique:#C99A4E;       /* antique gold */
+  --bronze:#9A6B3A;
+  --dbronze:#5E3D21;       /* dark bronze */
 
   /* signal */
-  --accent:#096E8B;        /* medium dark blue */
+  --accent:var(--azure);   /* buttons, links, highlights */
   --accent-ink:#FFFFFF;    /* text on accent fills */
-  --accent-2:#096E8B;      /* labels */
-  --accent-d:#07566C;      /* hover */
-  --shadow:0 24px 48px -28px rgba(31,52,66,.28);
+  --accent-2:var(--bronze);/* small labels */
+  --accent-d:var(--navy);  /* hover */
+  --shadow:0 24px 48px -28px rgba(10,53,82,.35);
 
   /* lines + radii */
-  --hairline:rgba(31,52,66,.10);
-  --hairline-2:rgba(31,52,66,.20);
+  --hairline:rgba(10,53,82,.12);
+  --hairline-2:rgba(10,53,82,.22);
   --r-card:18px;
   --r-pill:999px;
   --maxw:1240px;
@@ -58,7 +68,8 @@ img,svg{display:block}
 body::before{
   content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
   background:
-    radial-gradient(620px 620px at 80% 28%,rgba(50,130,160,.10),transparent 64%);
+    radial-gradient(640px 640px at 80% 24%,rgba(31,147,176,.16),transparent 64%),
+    radial-gradient(520px 520px at 8% 70%,rgba(230,194,122,.14),transparent 62%);
 }
 
 /* focus visibility */
@@ -76,7 +87,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-.025em}
 }
 .tag{
   font-family:var(--mono);font-size:11px;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--accent-2);display:block;margin-bottom:18px;
+  text-transform:uppercase;color:var(--accent);display:block;margin-bottom:18px;
 }
 
 /* ---------- BUTTONS ---------- */
@@ -99,7 +110,7 @@ header .wrap{padding:0 18px}
 nav{
   display:flex;align-items:center;justify-content:space-between;
   height:62px;padding:0 12px 0 18px;
-  background:rgba(244,248,250,.82);
+  background:rgba(247,251,252,.72);
   backdrop-filter:blur(14px) saturate(140%);
   -webkit-backdrop-filter:blur(14px) saturate(140%);
   border:1px solid var(--hairline);
@@ -168,33 +179,37 @@ h1{font-size:clamp(3.2rem,8.4vw,6.4rem);line-height:.98;letter-spacing:-.03em}
 .page-head h1{font-size:clamp(2.8rem,6.4vw,5rem);line-height:1.0}
 .page-head p{color:var(--ink-soft);font-size:1.2rem;max-width:52ch;margin-top:24px;font-family:var(--sans)}
 
-/* ---------- BENTO (home) ---------- */
-.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+/* ---------- BENTO (home): three glass cards in a row ---------- */
+.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .cell{
-  border-radius:var(--r-card);padding:clamp(26px,3vw,40px);
+  border-radius:var(--r-card);padding:clamp(28px,3vw,40px);
   position:relative;overflow:hidden;
-  background:var(--surface);border:1px solid var(--hairline);
-  transition:transform .35s var(--ease),border-color .35s,background .35s;
+  background:rgba(255,255,255,.62);
+  backdrop-filter:blur(14px) saturate(140%);
+  -webkit-backdrop-filter:blur(14px) saturate(140%);
+  border:1px solid var(--hairline);
+  transition:transform .35s var(--ease),border-color .35s,box-shadow .35s;
 }
 .cell::before{ /* hover sheen */
   content:"";position:absolute;inset:0;pointer-events:none;opacity:0;
-  background:linear-gradient(130deg,transparent 40%,rgba(9,110,139,.05) 55%,transparent 70%);
+  background:linear-gradient(130deg,transparent 40%,rgba(255,255,255,.55) 55%,transparent 70%);
   transition:opacity .4s var(--ease);
+}
+.cell::after{ /* gold tab */
+  content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:44px;height:3px;background:var(--gold);border-radius:0 0 3px 3px;
 }
 .cell:hover{transform:translateY(-5px);border-color:var(--hairline-2);box-shadow:var(--shadow)}
 .cell:hover::before{opacity:1}
-.cell h3{font-size:clamp(1.5rem,2.3vw,1.9rem);line-height:1.1;margin-bottom:12px}
+.cell h3{font-size:clamp(1.4rem,2vw,1.75rem);line-height:1.1;margin-bottom:12px}
 .cell p{color:var(--ink-soft);font-size:1rem;max-width:46ch}
-.c-soft{grid-column:span 3;background:
-  linear-gradient(155deg,rgba(9,110,139,.12),var(--surface) 70%)}
-.c-ai{grid-column:span 3}
-.c-ops{grid-column:span 6;background:
-  linear-gradient(120deg,var(--surface-2),var(--surface) 60%)}
-.cell .watermark{position:absolute;right:-34px;bottom:-54px;width:210px;opacity:.08;pointer-events:none}
+.c-soft{background:linear-gradient(155deg,rgba(31,147,176,.18),rgba(255,255,255,.66) 70%)}
+.c-ai{background:linear-gradient(155deg,rgba(18,96,143,.13),rgba(255,255,255,.66) 70%)}
+.c-ops{background:linear-gradient(155deg,rgba(230,194,122,.30),rgba(255,255,255,.66) 70%)}
+.cell .watermark{position:absolute;right:-34px;bottom:-54px;width:210px;opacity:.07;pointer-events:none}
 .cell .watermark path{fill:none;stroke:var(--ink);stroke-width:22;stroke-linecap:round;stroke-linejoin:round}
 @media(max-width:860px){
   .bento{grid-template-columns:1fr}
-  .c-soft,.c-ai,.c-ops{grid-column:auto}
 }
 
 /* ---------- CAPABILITY DETAIL (what-we-build) ---------- */
@@ -229,13 +244,14 @@ h1{font-size:clamp(3.2rem,8.4vw,6.4rem);line-height:.98;letter-spacing:-.03em}
 }
 
 /* ---------- MANIFESTO ---------- */
+.manifesto{background:var(--parchment)}
 .manifesto .wrap{max-width:1000px}
 .manifesto p.big{
   font-family:var(--serif);font-size:clamp(2rem,4.2vw,3.2rem);
   line-height:1.15;letter-spacing:-.025em;font-weight:600;
 }
 .manifesto p.big b{color:var(--accent);font-weight:600;font-style:normal}
-.manifesto .sub{color:var(--muted);font-size:1.14rem;margin-top:28px;max-width:60ch;font-family:var(--sans)}
+.manifesto .sub{color:var(--dbronze);font-size:1.14rem;margin-top:28px;max-width:60ch;font-family:var(--sans)}
 
 /* ---------- PRINCIPLES (approach) ---------- */
 .principles{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
@@ -245,7 +261,7 @@ h1{font-size:clamp(3.2rem,8.4vw,6.4rem);line-height:.98;letter-spacing:-.03em}
   transition:transform .3s var(--ease),border-color .3s;
 }
 .principle:hover{transform:translateY(-4px);border-color:var(--hairline-2);box-shadow:var(--shadow)}
-.principle .n{font-family:var(--mono);font-size:13px;color:var(--accent);margin-bottom:18px;letter-spacing:.1em}
+.principle .n{font-family:var(--mono);font-size:13px;color:var(--bronze);margin-bottom:18px;letter-spacing:.1em}
 .principle h3{font-size:1.5rem;line-height:1.1;margin-bottom:12px}
 .principle p{color:var(--ink-soft);font-size:1rem;max-width:46ch;font-family:var(--sans)}
 @media(max-width:760px){.principles{grid-template-columns:1fr}}
@@ -281,19 +297,19 @@ h1{font-size:clamp(3.2rem,8.4vw,6.4rem);line-height:.98;letter-spacing:-.03em}
 .contact{padding:clamp(72px,9vw,120px) 0}
 .contact-card{
   border-radius:32px;padding:clamp(48px,7vw,88px) clamp(24px,5vw,64px);text-align:center;
-  position:relative;overflow:hidden;color:#fff;background:var(--accent);
+  position:relative;overflow:hidden;color:#fff;background:var(--navy);
 }
 .contact-card::before{
-  content:"";position:absolute;width:520px;height:520px;border-radius:50%;right:-140px;top:-200px;
-  border:1px solid rgba(255,255,255,.2);
-  box-shadow:0 0 0 60px rgba(255,255,255,.04),0 0 0 120px rgba(255,255,255,.03);pointer-events:none;
+  content:"";position:absolute;width:560px;height:560px;border-radius:50%;right:-160px;top:-220px;
+  border:1px solid rgba(31,147,176,.55);
+  box-shadow:0 0 0 60px rgba(31,147,176,.10),0 0 0 120px rgba(31,147,176,.06);pointer-events:none;
 }
 .contact-card>*{position:relative}
 .contact-card h2{font-size:clamp(2.2rem,4.8vw,3.6rem);line-height:1.04}
-.contact-card p{color:rgba(255,255,255,.85);font-size:1.15rem;margin:20px auto 32px;max-width:46ch;font-family:var(--sans)}
-.contact-card .btn-primary{background:#fff;color:var(--accent);font-size:1.02rem;padding:15px 34px}
-.contact-card .btn-primary:hover{background:#E3F1F6}
-.contact-card .mail{display:block;margin-top:24px;font-family:var(--mono);font-size:14px;letter-spacing:.04em;color:rgba(255,255,255,.8)}
+.contact-card p{color:#BFD9E4;font-size:1.15rem;margin:20px auto 32px;max-width:46ch;font-family:var(--sans)}
+.contact-card .btn-primary{background:var(--gold);color:var(--navy);font-size:1.02rem;padding:15px 34px}
+.contact-card .btn-primary:hover{background:#F0D49A}
+.contact-card .mail{display:block;margin-top:24px;font-family:var(--mono);font-size:14px;letter-spacing:.04em;color:var(--gold)}
 .contact-card .wm{display:none}
 
 /* ---------- FOOTER ---------- */
@@ -315,14 +331,15 @@ footer{position:relative;padding:48px 0}
 .cap-media{display:none} /* empty decorative panels; single centered column instead */
 
 /* ---------- SECTION RULES (content width, not full bleed) ---------- */
-.page-head,.manifesto,.domains,footer{position:relative}
-.page-head::after,.manifesto::before,.manifesto::after,.domains::after,footer::before{
+.hero,.page-head,.domains,footer{position:relative}
+.hero::after,.page-head::after,.domains::after,footer::before{
   content:"";position:absolute;left:50%;transform:translateX(-50%);
-  width:min(calc(var(--maxw) - 56px),calc(100% - 56px));height:1px;
-  background:var(--hairline);pointer-events:none;
+  width:min(calc(var(--maxw) - 56px),calc(100% - 56px));height:1px;pointer-events:none;
 }
-.manifesto::before,footer::before{top:0}
-.page-head::after,.manifesto::after,.domains::after{bottom:0}
+.hero::after,.page-head::after,.domains::after{
+  bottom:0;background:linear-gradient(90deg,transparent,var(--antique) 18%,var(--antique) 82%,transparent);opacity:.55;
+}
+footer::before{top:0;background:var(--hairline)}
 
 /* ============================================================
    CSS-ONLY MOTION
