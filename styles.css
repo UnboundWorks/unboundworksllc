@@ -129,8 +129,6 @@ nav{
 }
 
 /* ---------- SHARED MARK ---------- */
-.mark-line{fill:none;stroke:var(--ink);stroke-width:22;stroke-linecap:round;stroke-linejoin:round}
-.mark-tip{fill:var(--accent)}
 
 /* ---------- SECTION SHELL ---------- */
 section{position:relative;z-index:1}
@@ -142,9 +140,8 @@ section{position:relative;z-index:1}
 
 /* ---------- HERO ---------- */
 .hero{
-  position:relative;min-height:calc(100dvh - 90px);
-  display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:48px;
-  padding:clamp(36px,7vw,72px) 28px 56px; /* keep .wrap side gutters */
+  position:relative;
+  padding:clamp(72px,10vw,128px) 28px clamp(64px,8vw,104px);
 }
 .hero-bg{position:absolute;inset:-40px 0 0 0;z-index:0;pointer-events:none;overflow:hidden}
 .hero-bg::after{ /* faint dot grid */
@@ -156,20 +153,14 @@ section{position:relative;z-index:1}
   opacity:.6;
 }
 .hero-inner{position:relative;z-index:1}
-h1{font-size:clamp(3.2rem,8.4vw,6.4rem);line-height:.98;letter-spacing:-.02em}
+h1{font-size:clamp(3.2rem,8.4vw,6.4rem);line-height:.98;letter-spacing:-.03em}
 .hero p.lead{
   font-family:var(--sans);font-size:clamp(1.08rem,1.5vw,1.3rem);
   color:var(--ink-soft);max-width:40ch;margin:28px 0 36px;line-height:1.55;
 }
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-.hero-art{position:relative;z-index:1;display:flex;justify-content:center;align-items:center}
-.hero-art{background:var(--surface);border:1px solid var(--hairline);border-radius:28px;aspect-ratio:1;box-shadow:var(--shadow);width:100%;max-width:440px;justify-self:center}
-.hero-art svg{width:62%;height:auto;overflow:visible}
 @media(max-width:860px){
-  .hero{grid-template-columns:1fr;min-height:auto;padding:24px 28px 44px;gap:24px}
-  .hero-art{order:-1}
-  .hero-art{max-width:200px;border-radius:22px}
-  .hero-art svg{width:62%}
+  .hero{padding:48px 28px 56px}
 }
 
 /* ---------- PAGE HEADER (subpages) ---------- */
@@ -318,17 +309,6 @@ footer{border-top:1px solid var(--hairline);padding:48px 0}
    CSS-ONLY MOTION
    ============================================================ */
 
-/* hero line draws itself once on load */
-@media(prefers-reduced-motion:no-preference){
-  .hero-art .mark-line{
-    stroke-dasharray:760;stroke-dashoffset:760;
-    animation:draw 1.1s var(--ease) forwards;
-  }
-  .hero-art .mark-tip{opacity:0;transform:scale(.4);transform-origin:188px 52px;
-    animation:pop .5s var(--ease) .7s forwards}
-}
-@keyframes draw{to{stroke-dashoffset:0}}
-@keyframes pop{to{opacity:1;transform:scale(1)}}
 
 /* scroll reveal — progressive enhancement, content visible by default */
 @supports (animation-timeline: view){
