@@ -164,7 +164,7 @@ h1{font-size:clamp(3.2rem,8.4vw,6.4rem);line-height:.98;letter-spacing:-.03em}
 }
 
 /* ---------- PAGE HEADER (subpages) ---------- */
-.page-head{padding:clamp(72px,10vw,120px) 0 clamp(40px,5vw,56px);border-bottom:1px solid var(--hairline)}
+.page-head{padding:clamp(72px,10vw,120px) 0 clamp(40px,5vw,56px)}
 .page-head h1{font-size:clamp(2.8rem,6.4vw,5rem);line-height:1.0}
 .page-head p{color:var(--ink-soft);font-size:1.2rem;max-width:52ch;margin-top:24px;font-family:var(--sans)}
 
@@ -229,7 +229,6 @@ h1{font-size:clamp(3.2rem,8.4vw,6.4rem);line-height:.98;letter-spacing:-.03em}
 }
 
 /* ---------- MANIFESTO ---------- */
-.manifesto{border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
 .manifesto .wrap{max-width:1000px}
 .manifesto p.big{
   font-family:var(--serif);font-size:clamp(2rem,4.2vw,3.2rem);
@@ -252,7 +251,7 @@ h1{font-size:clamp(3.2rem,8.4vw,6.4rem);line-height:.98;letter-spacing:-.03em}
 @media(max-width:760px){.principles{grid-template-columns:1fr}}
 
 /* ---------- DOMAINS MARQUEE ---------- */
-.domains{padding:clamp(48px,6vw,72px) 0;border-bottom:1px solid var(--hairline)}
+.domains{padding:clamp(48px,6vw,72px) 0}
 .domains .label{
   font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;
   color:var(--muted);text-align:center;margin-bottom:30px;
@@ -270,7 +269,7 @@ h1{font-size:clamp(3.2rem,8.4vw,6.4rem);line-height:.98;letter-spacing:-.03em}
 @keyframes slide{to{transform:translateX(-50%)}}
 
 /* ---------- ENGAGEMENT STEPS (home) ---------- */
-.engagement{padding:clamp(64px,8vw,104px) 0;border-top:1px solid var(--hairline)}
+.engagement{padding:clamp(64px,8vw,104px) 0}
 .engagement .label{
   font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;
   color:var(--accent-2);text-align:center;margin-bottom:clamp(36px,5vw,52px);
@@ -298,7 +297,7 @@ h1{font-size:clamp(3.2rem,8.4vw,6.4rem);line-height:.98;letter-spacing:-.03em}
 .contact-card .wm{display:none}
 
 /* ---------- FOOTER ---------- */
-footer{border-top:1px solid var(--hairline);padding:48px 0}
+footer{position:relative;padding:48px 0}
 .foot{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .foot .brand{font-size:16px}
 .foot .meta{font-family:var(--mono);font-size:13px;color:var(--muted)}
@@ -313,6 +312,16 @@ footer{border-top:1px solid var(--hairline);padding:48px 0}
 .foot{flex-direction:column;justify-content:center;gap:18px}
 .cap{grid-template-columns:1fr;max-width:760px;margin:0 auto}
 .cap-media{display:none} /* empty decorative panels; single centered column instead */
+
+/* ---------- SECTION RULES (content width, not full bleed) ---------- */
+.page-head,.manifesto,.domains,footer{position:relative}
+.page-head::after,.manifesto::before,.manifesto::after,.domains::after,footer::before{
+  content:"";position:absolute;left:50%;transform:translateX(-50%);
+  width:min(calc(var(--maxw) - 56px),calc(100% - 56px));height:1px;
+  background:var(--hairline);pointer-events:none;
+}
+.manifesto::before,footer::before{top:0}
+.page-head::after,.manifesto::after,.domains::after{bottom:0}
 
 /* ============================================================
    CSS-ONLY MOTION
